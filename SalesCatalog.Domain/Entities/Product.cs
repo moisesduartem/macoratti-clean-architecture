@@ -1,6 +1,4 @@
-﻿using SalesCatalog.Domain.Validation;
-
-namespace SalesCatalog.Domain.Entities
+﻿namespace SalesCatalog.Domain.Entities
 {
     public sealed class Product : Entity
     {
