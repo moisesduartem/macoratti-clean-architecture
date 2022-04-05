@@ -53,13 +53,13 @@
             Validator.When(name.Length < 3, "Too short name, minimum 3 characters");
 
             Validator.When(string.IsNullOrEmpty(description), "Description can't be null or empty");
-            Validator.When(name.Length < 5, "Too short description, minimum 5 characters");
+            Validator.When(description.Length < 5, "Too short description, minimum 5 characters");
 
             Validator.When(price < 0, "Invalid price value");
 
             Validator.When(stock < 0, "Invalid stock value");
 
-            Validator.When(image.Length < 250, "Too loong image name, maximum 250 characters");
+            Validator.When(image.Length > 250, "Too long image name, maximum 250 characters");
         }
     }
 }
