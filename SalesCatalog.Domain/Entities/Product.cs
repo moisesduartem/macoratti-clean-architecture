@@ -59,7 +59,7 @@
 
             Validator.When(stock < 0, "Invalid stock value");
 
-            Validator.When(image.Length > 250, "Too long image name, maximum 250 characters");
+            Validator.When(image?.Length > 250, "Too long image name, maximum 250 characters");
         }
     }
 }

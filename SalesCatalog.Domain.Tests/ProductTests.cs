@@ -84,5 +84,19 @@ namespace SalesCatalog.Domain.Tests
             Action action = () => new Product(1, "Product Name", "Product Description", 9.99m, 99, "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium q");
             action.Should().Throw<DomainValidationException>().WithMessage("Too long image name, maximum 250 characters");
         }
+
+        [Fact]
+        public void CreateCategory_WithNullImageName_NotThrowDomainValidationException()
+        {
+            Action action = () => new Product(1, "Product Name", "Product Description", 9.99m, 99, null);
+            action.Should().NotThrow<DomainValidationException>();
+        }
+        
+        [Fact]
+        public void CreateCategory_WithNullImageName_NotNullReferenceException()
+        {
+            Action action = () => new Product(1, "Product Name", "Product Description", 9.99m, 99, null);
+            action.Should().NotThrow<NullReferenceException>();
+        }
     }
 }
